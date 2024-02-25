@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.3 (RELEASE-2.4.3-ad3323c; 2019-01-21T17:46:06+0000) JAXWS-RI/2.3.2 JAXWS-API/2.3.2 JAXB-RI/2.3.2 JAXB-API/2.3.2 git-revision#unknown. --><xs:schema xmlns:tns="http://uslugaprojekt.ue.poznan.pl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://uslugaprojekt.ue.poznan.pl/">
+
+<xs:element name="pobierzPortWgNazwy" type="tns:pobierzPortWgNazwy"/>
+
+<xs:element name="pobierzPortWgNazwyResponse" type="tns:pobierzPortWgNazwyResponse"/>
+
+<xs:element name="pobierzStatekWgMmsi" type="tns:pobierzStatekWgMmsi"/>
+
+<xs:element name="pobierzStatekWgMmsiResponse" type="tns:pobierzStatekWgMmsiResponse"/>
+
+<xs:element name="zarejestrujPort" type="tns:zarejestrujPort"/>
+
+<xs:element name="zarejestrujPortResponse" type="tns:zarejestrujPortResponse"/>
+
+<xs:element name="zarejestrujStatek" type="tns:zarejestrujStatek"/>
+
+<xs:element name="zarejestrujStatekResponse" type="tns:zarejestrujStatekResponse"/>
+
+<xs:complexType name="zarejestrujStatek">
+<xs:sequence>
+<xs:element name="mmsi" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="flag" type="xs:string" minOccurs="0"/>
+<xs:element name="vtype" type="xs:string" minOccurs="0"/>
+<xs:element name="picture" type="xs:base64Binary" nillable="true" minOccurs="0"/>
+<xs:element name="grossTonnage" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="zarejestrujStatekResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pobierzPortWgNazwy">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pobierzPortWgNazwyResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:port" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="port">
+<xs:sequence>
+<xs:element name="country" type="xs:string" minOccurs="0"/>
+<xs:element name="lat" type="xs:double"/>
+<xs:element name="lon" type="xs:double"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pobierzStatekWgMmsi">
+<xs:sequence>
+<xs:element name="mmsi" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pobierzStatekWgMmsiResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:statek" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="statek">
+<xs:sequence>
+<xs:element name="flag" type="xs:string" minOccurs="0"/>
+<xs:element name="grossTonnage" type="xs:string" minOccurs="0"/>
+<xs:element name="mmsi" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="picture" type="xs:base64Binary" minOccurs="0"/>
+<xs:element name="vtype" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="zarejestrujPort">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="country" type="xs:string" minOccurs="0"/>
+<xs:element name="lat" type="xs:double"/>
+<xs:element name="lon" type="xs:double"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="zarejestrujPortResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
